@@ -71,3 +71,7 @@ table,tr,th,td{
     padding: 7px;
    
 }
+#stockChart {
+    width: 100%;
+    height: 420px;
+}
