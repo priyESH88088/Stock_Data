@@ -6,7 +6,6 @@ const stockDetails = document.getElementById('stockDetails');
 const stockTable = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
 const ctx = document.getElementById('stockChart').getContext('2d');
 let stockChart;
-
 const stockDropdown = document.getElementById('select');
 const loadStockButton = document.getElementById('load1');
 
@@ -18,8 +17,6 @@ async function getStockData(stockSymbol) {
 async function getTrendingStocks() {
     const response = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=${apiKey}`);
     const data = await response.json();
-    // Mocking top 10 stocks as Alpha Vantage API does not directly provide top trending stocks.
-    // Replace this part with an actual trending stocks API endpoint.
     const trendingStocks = ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA', 'FB', 'NFLX', 'NVDA', 'BABA', 'INTC'];
     return trendingStocks;
 }
@@ -79,11 +76,9 @@ function displayStockGraph(stockData) {
         },
         options: {
             scales: {
-                x: {
-                    beginAtZero: true
+                x: {   beginAtZero: true     
                 },
-                y: {
-                    beginAtZero: false
+                y: { beginAtZero: false
                 }  }  }   
     });  }
 searchButton.addEventListener('click', async () => {
