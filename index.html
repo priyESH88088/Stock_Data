@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Tracker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>Stock Tracker Dashboard</header>
+    <main> 
+        <div class="stockfinder"> 
+             <h1>Select Trending Stock</h2>
+        <select id="select">
+           
+        </select>
+
+          <button id="load1">Load Stock</button>
+        </div>
+
+        <div class="stockfinder">
+            <input id="search" type="text" placeholder="Search for Stock"/>
+            <button id="load">Search</button>
+        </div>
+
+      <div id="information">
+                <h2>Stock Information</h2>
+                <div id="stockDetails"></div>
+      </div>
+        
+      <div id="graph">
+              <h2>Stock Price Graph</h2>
+              <canvas id="stockChart"></canvas>
+      </div>
+
+      <div id="compare-table">
+        <h2 id="compare">Compare Stocks</h2>
+        <table id="stockTable">
+           <thead><tr>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Change</th>
+                <th>Volume</th>
+              </tr> </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+      </div>
+       
+    </div>
+    </main>
+  <script src="./script.js" ></script>
+    
+</body>
+</html>
