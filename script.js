@@ -1,4 +1,3 @@
-
 const apiKey = "KVBAZ7F1CJU3INEM";
 const stockSearch = document.getElementById('search');
 const searchButton = document.getElementById('load');
