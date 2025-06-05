@@ -56,7 +56,8 @@ function updateStockTable(symbol, price, change, volume) {
 }
 function displayStockGraph(stockData) {
     const labels = Object.keys(stockData).slice(0, 30).reverse();
-    const data = labels.map(date => stockData[date]['4. close']);
+    // const data = labels.map(date => stockData[date]['4. close']);
+     const data = labels.map(date => parseFloat(stockData[date]['4. close']));
 
     if (stockChart) {
         stockChart.destroy();
@@ -84,6 +85,7 @@ function displayStockGraph(stockData) {
 searchButton.addEventListener('click', async () => {
     const stockSymbol = stockSearch.value.toUpperCase();
     const stockData = await getStockData(stockSymbol);
+     console.log(stockData);
     
     if (stockData) {
         displayStockDetails(stockData, stockSymbol);
@@ -95,6 +97,7 @@ searchButton.addEventListener('click', async () => {
 loadStockButton.addEventListener('click', async () => {
     const selectedStock = stockDropdown.value;
     const stockData = await getStockData(selectedStock);
+     console.log(stockData);
     if (stockData) {
         displayStockDetails(stockData, selectedStock);
         displayStockGraph(stockData);
